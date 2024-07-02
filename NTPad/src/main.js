@@ -2,24 +2,29 @@ const { appWindow } = window.__TAURI__.window;
 //const { fs } = window.__TAURI__.fs;
 const textarea = document.getElementById('editor');
 const numbers = document.getElementById("numbers");
+
 document.getElementById('minimize').addEventListener('click', () => appWindow.minimize());
 document.getElementById('maximize').addEventListener('click', () => appWindow.toggleMaximize());
 document.getElementById('quit').addEventListener('click', () => closeFun());
-document.getElementById('close').addEventListener('click', () => closeFun());
+
+document.addEventListener('click', e => {
+  const isDrop = e.target.matches("[data-drop-btn]");
+  if (!isDrop && e.target.closest('[data-drop]') != null) return;
+
+  let currentBtn;
+  if (isDrop) {
+    currentBtn = e.target.closest('[data-drop]');
+    currentBtn.classList.toggle('active');
+  }
+
+  document.querySelectorAll("[data-drop].active").forEach(dropDown => {
+    if (dropDown === currentBtn) return;
+    dropDown.classList.remove('active');
+  });
+});
 
 document.getElementById('copy').addEventListener('click', function() {
   navigator.clipboard.writeText(textarea.value);
-});
-
-document.getElementById('settings').addEventListener('click', function() {
-  if (coin == 0) {
-    document.getElementById('container').style.display = 'block';
-    coin = 1;
-  }
-  else {
-    document.getElementById('container').style.display = 'none';
-    coin = 0;
-  }
 });
 
 textarea.addEventListener("keyup", (e) => {
@@ -47,10 +52,8 @@ textarea.addEventListener("keydown", (event) => {
   }
 });
 
+
+
 $('.theme-btn').click(function() {
   document.documentElement.setAttribute('data-theme', this.value);
-});
-
-$('.font-btn').click(function() {
-  document.documentElement.style.fontFamily = "Arial";
 });

@@ -85,7 +85,7 @@ body, html {
   background-color: var(--background);
 }
 
-.dropdown > .nav-btns:focus + .drop-menu {
+.dropdown.active > .nav-btns + .drop-menu {
   display: block;
 
 }
@@ -181,12 +181,12 @@ body, html {
   bottom: 10px;
   left: 10px;
   width: 180px;
-  height: 225px;
+  height: 130px;
   z-index: 999;
   background-color: var(--background);
   border: 2px solid var(--foreground);
   border-radius: 5px;
-  display: block;
+  display: none;
 }
 
 .theme-menu {
@@ -196,20 +196,6 @@ body, html {
   width: 150px;
   height: auto;
   z-index: 9999;
-  padding: 3px;
-  border-radius: 3px;
-  border: 2px solid var(--foreground);
-  background-color: var(--background);
-}
-
-.font-menu {
-  position: relative;
-  left: 10px;
-  top: 20px;
-  width: 150px;
-  height: auto;
-  z-index: 9999;
-  display: block;
   padding: 3px;
   border-radius: 3px;
   border: 2px solid var(--foreground);
@@ -233,27 +219,6 @@ body, html {
 }
 
 .theme-btn:hover {
-  background-color: var(--foreground);
-  color: var(--background);
-}
-
-.font-btn {
-  position: relative;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 25px;
-  background-color: transparent;
-  z-index: 99;
-  border: none;
-  border-radius: 3px;
-  font-size: 14pt;
-  color: var(--foreground);
-  text-align: left;
-  cursor: pointer;
-}
-
-.font-btn:hover {
   background-color: var(--foreground);
   color: var(--background);
 }
