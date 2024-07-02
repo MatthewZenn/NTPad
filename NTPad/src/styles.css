@@ -3,7 +3,7 @@
   --foreground: rgb(12, 12, 12);
 }
 
-:root {
+[data-theme = "blue"] {
   --background: #f0f5fa;
   --foreground: #444cf7;
 }
@@ -26,7 +26,7 @@ body, html {
   background-color: var(--background);
   background-image:  radial-gradient(var(--foreground) 1.25px, transparent 1.25px), radial-gradient(var(--foreground) 1.25px, var(--background) 1.25px);
   background-size: 10px 10px;
-  background-position: 0 0,5px 5px;
+  background-position: 0px 0px,5px 5px;
   border-left: 2px solid var(--foreground);
 }
  
@@ -142,7 +142,7 @@ body, html {
   padding-left: 5px;
   padding-top: 10px;
   display: block;
-  font-family: MsDoS
+  font-family: MsDoS;
 }
   
 #numbers {
