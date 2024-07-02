@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notepad</title>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <header data-tauri-drag-region class="titlebar">
+      <div class="dropdown">
+        <button class="nav-btns" id="file">File</button>
+        <div class="drop-menu">
+          <button class="menu-btn" id="new">New</button>
+          <button class="menu-btn">Open</button>
+          <button class="menu-btn">Save As</button>
+          <button class="menu-btn">Save</button>
+          <button class="menu-btn" id="quit">Quit</button>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="nav-btns" id="edit">Edit</button>
+        <div class="drop-menu">
+          <button class="menu-btn">Undo</button>
+          <button class="menu-btn">Redo</button>
+          <button class="menu-btn">Cut</button>
+          <button class="menu-btn" id="copy">Copy</button>
+          <button class="menu-btn">Paste</button>
+        </div>
+        <div class="dropdown">
+          <button class="nav-btns" id="view">View</button>
+          <div class="drop-menu">
+            <button class="menu-btn" id="maximize">Fullscreen</button>
+            <button class="menu-btn" id="minimize">Minimize</button>
+            <button class="menu-btn">Themes</button>
+          </div>
+        <div class="dropdown">
+          <button class="nav-btns" id="close">Quit</button>
+      </div>
+    </header>
+    <div id="textcontainer">
+      <div id="numbers">
+        <span></span>
+      </div>
+      <textarea id="editor" spellcheck="false"></textarea>
+    </div>
+  </body>
+</html>

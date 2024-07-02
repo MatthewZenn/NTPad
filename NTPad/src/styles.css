@@ -1,0 +1,167 @@
+:root {
+  --background: rgb(255, 254, 245);
+  --foreground: rgb(12, 12, 12);
+}
+
+:root {
+  --background: #f0f5fa;
+  --foreground: #444cf7;
+}
+
+body, html {
+  font-family: MsDoS;
+  background: var(--background);
+}
+
+@font-face {
+  font-family: MsDoS;
+  src: url(assets/MorePerfectDOSVGA.ttf);
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+ 
+::-webkit-scrollbar-track {
+  background-color: var(--background);
+  background-image:  radial-gradient(var(--foreground) 1.25px, transparent 1.25px), radial-gradient(var(--foreground) 1.25px, var(--background) 1.25px);
+  background-size: 10px 10px;
+  background-position: 0 0,5px 5px;
+  border-left: 2px solid var(--foreground);
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: var(--background);
+  border: 2px solid var(--foreground);
+}
+
+#editor::selection {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+.titlebar {
+  height: 30px;
+  user-select: none;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--background);
+  border-bottom: 2px solid var(--foreground);
+}
+
+.dropdown {
+  position: relative;
+  display: inline;
+}
+
+.drop-menu {
+  position: absolute;
+  left: 5px;
+  top: 32px;
+  width: 150px;
+  height: auto;
+  z-index: 9999;
+  display: none;
+  padding: 3px;
+  border-radius: 3px;
+  border: 2px solid var(--foreground);
+  background-color: var(--background);
+}
+
+.dropdown > .nav-btns:focus + .drop-menu {
+  display: block;
+
+}
+
+.menu-btn {
+  position: relative;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 25px;
+  background-color: transparent;
+  z-index: 99;
+  border: none;
+  border-radius: 3px;
+  font-family: MsDoS;
+  font-size: 14pt;
+  color: var(--foreground);
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu-btn:hover {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+.nav-btns {
+  position: relative;
+  top: 5px;
+  left: 0px;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  height: 25px;
+  border-radius: 5px;
+  font-family: MsDoS;
+  font-size: 14pt;
+  color: var(--foreground);
+  cursor: pointer;
+}
+
+#textcontainer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: calc(100% - 30px);
+  width: 100%;
+  display: block;
+  font-family: Consolas, "Courier New", Courier, monospace;
+  background-color: var(--background);
+  overflow: hidden;
+  overflow-y: scroll;
+  z-index: -1;
+}
+  
+#editor {
+  position: absolute;
+  top: 0px;
+  left: 35px;
+  height: 100%;
+  width: 99%;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: 16pt;
+  outline: none;
+  border: none;
+  resize: none;
+  padding-left: 5px;
+  padding-top: 10px;
+  display: block;
+  font-family: MsDoS
+}
+  
+#numbers {
+  position: absolute;
+  width: 20px;
+  left: 5px;
+  top: 0;
+  font-size: 16pt;
+  padding-top: 10px;
+  text-align: right;
+  font-family: MsDoS;
+}
+
+#numbers span {
+  counter-increment: linenumber;
+}
+
+#numbers span::before {
+  content: counter(linenumber);
+  display: block;
+  color: var(--foreground);
+}
