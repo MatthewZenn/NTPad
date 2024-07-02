@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notepad</title>
     <script src="main.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body>
     <header data-tauri-drag-region class="titlebar">
@@ -33,7 +34,7 @@
           <div class="drop-menu">
             <button class="menu-btn" id="maximize">Fullscreen</button>
             <button class="menu-btn" id="minimize">Minimize</button>
-            <button class="menu-btn">Preferences</button>
+            <button class="menu-btn" id="settings">Preferences</button>
           </div>
         <div class="dropdown">
           <button class="nav-btns" id="close">Quit</button>
@@ -44,6 +45,19 @@
         <span></span>
       </div>
       <textarea id="editor" spellcheck="false"></textarea>
+    </div>
+    <div id="container">
+      <div class="theme-menu">
+        <button class="theme-btn" value="default">Default</button>
+        <button class="theme-btn" value="red">Red</button>
+        <button class="theme-btn" value="blue">Blue</button>
+        <button class="theme-btn" value="terminal">Terminal</button>
+      </div>
+      <div class="font-menu">
+        <button class="font-btn" value="msdos">MsDoS</button>
+        <button class="font-btn" value="Consolas">Consolas</button>
+        <button class="font-btn" value="Arial">Arial</button>
+      </div>
     </div>
   </body>
 </html>

@@ -11,6 +11,17 @@ document.getElementById('copy').addEventListener('click', function() {
   navigator.clipboard.writeText(textarea.value);
 });
 
+document.getElementById('settings').addEventListener('click', function() {
+  if (coin == 0) {
+    document.getElementById('container').style.display = 'block';
+    coin = 1;
+  }
+  else {
+    document.getElementById('container').style.display = 'none';
+    coin = 0;
+  }
+});
+
 textarea.addEventListener("keyup", (e) => {
   const num = e.target.value.split("\n").length;
   numbers.innerHTML = Array(num).fill("<span></span>").join("");
@@ -34,4 +45,12 @@ textarea.addEventListener("keydown", (event) => {
       textarea.value.substring(end);
     event.preventDefault();
   }
+});
+
+$('.theme-btn').click(function() {
+  document.documentElement.setAttribute('data-theme', this.value);
+});
+
+$('.font-btn').click(function() {
+  document.documentElement.style.fontFamily = "Arial";
 });
