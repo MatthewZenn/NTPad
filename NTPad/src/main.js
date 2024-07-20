@@ -52,8 +52,6 @@ textarea.addEventListener("keydown", (event) => {
   }
 });
 
-
-
 $('.theme-btn').click(function() {
   document.documentElement.setAttribute('data-theme', this.value);
 });

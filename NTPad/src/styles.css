@@ -1,21 +1,36 @@
 :root {
   --background: rgb(255, 254, 245);
   --foreground: rgb(12, 12, 12);
+  --font: MsDos;
+  --size: 14pt;
 }
 
 [data-theme="red"] {
   --background: rgb(255, 247, 245);
   --foreground: rgb(255, 70, 70);
+  --font: MsDos;
+  --size: 14pt;
 }
 
 [data-theme="blue"] {
   --background: #f0f5fa;
   --foreground: #444cf7;
+  --font: MsDos;
+  --size: 14pt;
 }
 
 [data-theme="terminal"] {
   --background: #000000;
   --foreground: #07d400;
+  --font: MsDos;
+  --size: 14pt;
+}
+
+[data-theme="1999"] {
+  --background: rgb(255, 254, 245);
+  --foreground: rgb(12, 12, 12);
+  --font: tennoSpeak;
+  --size: 10pt;
 }
 
 body, html {
@@ -23,12 +38,17 @@ body, html {
 }
 
 * {
-  font-family: MsDoS;
+  font-family: var(--font);
 }
 
 @font-face {
   font-family: MsDoS;
   src: url(assets/MorePerfectDOSVGA.ttf);
+}
+
+@font-face {
+  font-family: tennoSpeak;
+  src: url(assets/1999.ttf);
 }
 
 ::-webkit-scrollbar {
@@ -100,7 +120,7 @@ body, html {
   z-index: 99;
   border: none;
   border-radius: 3px;
-  font-size: 14pt;
+  font-size: var(--size);
   color: var(--foreground);
   text-align: left;
   cursor: pointer;
@@ -120,7 +140,7 @@ body, html {
   text-align: center;
   height: 25px;
   border-radius: 5px;
-  font-size: 14pt;
+  font-size: var(--size);
   color: var(--foreground);
   cursor: pointer;
 }
@@ -216,7 +236,7 @@ body, html {
   z-index: 99;
   border: none;
   border-radius: 3px;
-  font-size: 14pt;
+  font-size: var(--size);
   color: var(--foreground);
   text-align: left;
   cursor: pointer;
